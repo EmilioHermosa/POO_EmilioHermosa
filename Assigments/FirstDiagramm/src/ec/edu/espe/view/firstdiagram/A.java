@@ -4,13 +4,13 @@ package ec.edu.espe.view.firstdiagram;
 
 public class A {
     
-    int m;
-    float n;
-    B b;
+    private int m;
+    private float n;
+    private B b;
     
-    D m()
+    public D m(C c)
     {
-        C c;
+        
         return null;
        
         

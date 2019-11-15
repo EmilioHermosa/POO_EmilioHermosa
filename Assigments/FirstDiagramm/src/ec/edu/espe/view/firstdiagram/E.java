@@ -4,12 +4,11 @@ package ec.edu.espe.view.firstdiagram;
 
 public class E {
     
-    B [] b = new B [5];
+   private  B [] bs = new B [5];
     
-    int m()
+    public void m(D d)
     {
-        D d;
-        return 0;
+       
        
     }
     

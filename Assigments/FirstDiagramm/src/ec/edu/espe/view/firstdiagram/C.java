@@ -9,10 +9,10 @@ public class C {
     
     List<B> b = new ArrayList<>();
     
-    int m()
+    public void  m(E e)
     {
-        E e;
-        return 0;
+        
+       
     }
     
     
