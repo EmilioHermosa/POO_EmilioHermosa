@@ -15,6 +15,10 @@ public class User {
     private String fullName;
     private String emailAdress;
     private String isActive;
+
+    User() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public void checkPasword(String password){
         
