@@ -47,7 +47,7 @@ public class MonthCalcTest {
     @Test
     public void stringMonth() {
         System.out.println("calcMonth");
-        int month = dos;
+        int month = 2;
         int año = -1;
         int expResult = 226;
         int result = MonthCalc.calcMonth(month, año);
@@ -79,6 +79,17 @@ public class MonthCalcTest {
     
     @Test
     public void ceroMonth() {
+        System.out.println("calcMonth");
+        int month = 0;
+        int año = 2020;
+        int expResult = -1;
+        int result = MonthCalc.calcMonth(month, año);
+        assertEquals(expResult, result);
+        
+    }
+    
+        @Test
+    public void testMonth() {
         System.out.println("calcMonth");
         int month = 0;
         int año = 2020;

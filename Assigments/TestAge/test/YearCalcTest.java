@@ -36,8 +36,8 @@ public class YearCalcTest {
     @Test
     public void stringYear() {
         System.out.println("calcYear");
-        int year = two thousand;
-        int expResult = nineteen;
+        int year = 5;
+        int expResult = -1;
         int result = YearCalc.calcYear(year);
         assertEquals(expResult, result);
        
@@ -76,8 +76,18 @@ public class YearCalcTest {
     @Test
     public void characterYear() {
         System.out.println("calcYear");
-        int year = */&;
+        int year = 4;
         int expResult = -1;
+        int result = YearCalc.calcYear(year);
+        assertEquals(expResult, result);
+       
+    }
+    
+    @Test
+    public void testYear() {
+        System.out.println("calcYear");
+        int year = 1970;
+        int expResult = 48;
         int result = YearCalc.calcYear(year);
         assertEquals(expResult, result);
        

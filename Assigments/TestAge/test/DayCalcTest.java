@@ -38,7 +38,7 @@ public class DayCalcTest {
     @Test
     public void stringDay() {
         System.out.println("calcDay");
-        int day = diez;
+        int day = 10;
         int mes = 2;
         int year = 2000;
         int expResult = -1;
