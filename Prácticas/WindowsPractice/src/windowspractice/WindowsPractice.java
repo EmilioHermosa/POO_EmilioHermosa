@@ -3,25 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.polimorfism.model;
+package windowspractice;
 
 /**
  *
- * @author H304
+ * @author User
  */
-public class Polimorfism {
+public class WindowsPractice {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        Cage cage = new Cage(1, "wood", 1, 1);
-        Animal animal = new Animal(1, "Pepito", "male", 5, cage);
-        System.out.println(animal);
-        
-        
-        
+        // TODO code application logic here
+        Windows window = new Windows(); //SE CREA LA VENTANA PRINCIPAL
+        window.setVisible(true); //SE HACE VISIBLE LA VENTANA
+        window.setLocationRelativeTo(null); //SE CENTRA LA VENTANA
     }
     
 }

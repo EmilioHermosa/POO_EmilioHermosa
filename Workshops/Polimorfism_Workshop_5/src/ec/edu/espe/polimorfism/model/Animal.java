@@ -9,7 +9,7 @@ package ec.edu.espe.polimorfism.model;
  *
  * @author H304
  */
-public abstract class Animal {
+public class Animal {
     
     private int id;
     private String name;

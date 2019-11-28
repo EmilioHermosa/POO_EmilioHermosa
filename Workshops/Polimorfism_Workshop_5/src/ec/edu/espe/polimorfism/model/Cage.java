@@ -9,7 +9,7 @@ package ec.edu.espe.polimorfism.model;
  *
  * @author H304
  */
-class Cage {
+public class Cage {
     
     private int id;
     private String material;
