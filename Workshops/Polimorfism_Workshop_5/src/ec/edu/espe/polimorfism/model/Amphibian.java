@@ -52,6 +52,11 @@ public class Amphibian extends Animal {
     public void setJump(boolean jump) {
         this.jump = jump;
     }
+
+    @Override
+    public String getData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

@@ -61,6 +61,11 @@ public class Bird extends Animal {
     public void setFly(boolean fly) {
         this.fly = fly;
     }
+
+    @Override
+    public String getData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

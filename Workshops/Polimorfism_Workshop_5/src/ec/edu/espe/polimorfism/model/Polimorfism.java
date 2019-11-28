@@ -16,8 +16,9 @@ public class Polimorfism {
      */
     public static void main(String[] args) {
         
+        Animal animal;
         Cage cage = new Cage(1, "wood", 1, 1);
-        Animal animal = new Animal(1, "Pepito", "male", 5, cage);
+        animal = new Monkey(1, "Pepito", "male", 5, cage);
         System.out.println(animal);
         
         
