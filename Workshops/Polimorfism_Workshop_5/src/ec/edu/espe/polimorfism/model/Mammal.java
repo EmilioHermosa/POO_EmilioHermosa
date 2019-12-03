@@ -43,6 +43,11 @@ public class Mammal extends Animal {
     public void setIsBreastFeeding(boolean isBreastFeeding) {
         this.isBreastFeeding = isBreastFeeding;
     }
+
+    @Override
+    public String getData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

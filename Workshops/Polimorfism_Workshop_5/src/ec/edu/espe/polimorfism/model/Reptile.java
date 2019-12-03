@@ -86,6 +86,11 @@ public class Reptile extends Animal {
     public void setPoisonous(boolean poisonous) {
         this.poisonous = poisonous;
     }
+
+    @Override
+    public String getData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
