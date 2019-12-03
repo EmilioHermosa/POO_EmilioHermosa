@@ -5,6 +5,11 @@
  */
 package encryptedpassword;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
+
 /**
  *
  * @author User
@@ -36,6 +41,7 @@ public class Interface extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         ScrPass = new javax.swing.JPasswordField();
+        btnCreateUser = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
@@ -80,6 +86,14 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
+        btnCreateUser.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCreateUser.setText("Create User");
+        btnCreateUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateUserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,7 +117,11 @@ public class Interface extends javax.swing.JFrame {
                                         .addGap(30, 30, 30)
                                         .addComponent(ScrPass, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnCreateUser)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jButton1)))
                                 .addGap(43, 43, 43)))
                         .addGap(0, 101, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -126,12 +144,13 @@ public class Interface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(ScrPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(btnCreateUser))
                 .addContainerGap())
         );
 
@@ -140,6 +159,10 @@ public class Interface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 // TODO add your handling code here:
+        List<Password> pass = new ArrayList<>();
+        Password desencrypt = null;
+        //pass.set(1, desencrypt);
+        //desencrypt=pass.get(0);
         String user="Emilio";
         String password= "12345";
         String scrUser;
@@ -147,6 +170,7 @@ public class Interface extends javax.swing.JFrame {
         
         scrUser = ScrUser.getText();
         scrPassword = ScrPass.getText();
+        
         
         if(ScrUser.getText().equals(user) && ScrPass.getText().equals(password))
         {
@@ -162,8 +186,7 @@ public class Interface extends javax.swing.JFrame {
         
         }
         
-        Encryption en = new Encryption();
-        en.encryptPassword(password);
+        
         
         
         
@@ -191,6 +214,13 @@ public class Interface extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_ScrPassActionPerformed
+
+    private void btnCreateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateUserActionPerformed
+        
+         CreateUser back=new CreateUser();
+        back.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCreateUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,6 +260,7 @@ public class Interface extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField ScrPass;
     private javax.swing.JTextField ScrUser;
+    private javax.swing.JButton btnCreateUser;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

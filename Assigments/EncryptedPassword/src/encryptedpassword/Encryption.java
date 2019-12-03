@@ -1,29 +1,24 @@
 
 package encryptedpassword;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+
+
+
+
 
 public class Encryption {
     
-    public String encryptPassword(String pass)
-    {
-        try{
-            java.security.MessageDigest ja= java.security.MessageDigest.getInstance("pass");
-            
-            byte[] array = ja.digest(pass.getBytes());
-            
-            StringBuffer sb=new StringBuffer();
-            
-            for(int i=0; i<array.length; i++){
-                
-                sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
-            }
-        return sb.toString();
-        }catch(java.security.NoSuchAlgorithmException e){  
-        
-        }
-        
-        return null;
+
     
+    public static String encriptar(String s) throws UnsupportedEncodingException{
+        return Base64.getEncoder().encodeToString(s.getBytes("utf-8"));
+    }
+    
+    public static Password desencriptar(String s) throws UnsupportedEncodingException{
+        byte[] decode = Base64.getDecoder().decode(s.getBytes());
+        return new Password(decode, "utf-8");
     }
     
 }
