@@ -12,10 +12,18 @@ package ec.edu.espe.polimorfism.model;
 public class Monkey extends Mammal {
     
     private int tailLenght;
+    
+    Monkey(int i, String "pepito", String "male", int i0, Cage cage) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     Monkey(int i, String pepito, String male, int i0, Cage cage) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
+
+    
 
     
 
@@ -27,7 +35,7 @@ public class Monkey extends Mammal {
     
     
     public Monkey(int tailLenght, boolean isBreastFeeding, int id, String name, String gender, float weight, Cage cage) {
-        super(isBreastFeeding, id, name, gender, weight, cage);
+        super( id, name, gender, weight, cage);
         this.tailLenght = tailLenght;
     }
 

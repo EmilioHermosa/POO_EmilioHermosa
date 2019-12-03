@@ -20,7 +20,7 @@ public class Mammal extends Animal {
 
     
     
-    public Mammal(boolean isBreastFeeding, int id, String name, String gender, float weight, Cage cage) {
+    public Mammal( int id, String name, String gender, float weight, Cage cage) {
         super(id, name, gender, weight, cage);
         System.out.println("Mammal constructor");
         this.isBreastFeeding = isBreastFeeding;
