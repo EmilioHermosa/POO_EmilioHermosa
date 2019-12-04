@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package encryptedpassword;
+package systemloggin;
 
 import com.google.gson.Gson;
-import static encryptedpassword.Encryption.encriptar;
-import static encryptedpassword.FileCsv.exportCsv;
+import java.awt.List;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import static systemloggin.Encrypt.encriptar;
 
 /**
  *
@@ -40,26 +42,26 @@ public class CreateUser extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        scrCreateUser = new javax.swing.JTextField();
-        scrCreatePassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        srcCreateUser = new javax.swing.JTextField();
+        srcCreatePassword = new javax.swing.JTextField();
+        btnCreate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("CREATE USER");
+        jLabel1.setText("Create user");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("USER");
+        jLabel2.setText("User");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("PASSWORD");
+        jLabel3.setText("Password");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("CREATE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCreate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCreate.setText("Create");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCreateActionPerformed(evt);
             }
         });
 
@@ -67,73 +69,89 @@ public class CreateUser extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(151, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(144, 144, 144))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
+                                .addGap(15, 15, 15)
                                 .addComponent(jLabel2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel3)))
-                        .addGap(29, 29, 29)
+                            .addComponent(jLabel3))
+                        .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(scrCreateUser, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                            .addComponent(scrCreatePassword)))
+                            .addComponent(srcCreateUser)
+                            .addComponent(srcCreatePassword, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(jButton1)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                        .addGap(156, 156, 156)
+                        .addComponent(btnCreate)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(56, 56, 56)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(scrCreateUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(srcCreateUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(scrCreatePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(39, 39, 39))
+                    .addComponent(srcCreatePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addComponent(btnCreate)
+                .addGap(42, 42, 42))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         
-        String scrPassword;
-        String scrUser;
         String encrypt = null;
-        scrUser= scrCreateUser.getText();
-        scrPassword = scrCreatePassword.getText();
-        List<Password> pass = new ArrayList<>();
+        Password pass = new Password();
+        Gson gson = new Gson();
+        pass.user=srcCreateUser.getText();
+        pass.password=srcCreatePassword.getText();
         try {
-            encrypt=encriptar(scrCreatePassword.getText());
+            encrypt=encriptar(pass.password);
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
         }
-        pass.add(new Password(scrUser,encrypt));
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(pass);
-        exportCsv(pass);
+        String jsonPass = gson.toJson(pass);
+        
+        ArrayList<String> password = new ArrayList<String>();
+        password.add(jsonPass);
+        
+      ObjectOutputStream write = null;
+        try {
+            write = new ObjectOutputStream(new FileOutputStream("Users.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            write.writeObject(password);
+        } catch (IOException ex) {
+            Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            write.close();
+        } catch (IOException ex) {
+            Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
-        Interface back=new Interface();
-        back.setVisible(true);
-        dispose();
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_btnCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,13 +189,11 @@ public class CreateUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCreate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField scrCreatePassword;
-    private javax.swing.JTextField scrCreateUser;
+    private javax.swing.JTextField srcCreatePassword;
+    private javax.swing.JTextField srcCreateUser;
     // End of variables declaration//GEN-END:variables
-
-    
 }
