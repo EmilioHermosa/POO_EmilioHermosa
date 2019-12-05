@@ -37,7 +37,7 @@ public class Interface extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         ScrUser = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnLoggin = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         ScrPass = new javax.swing.JPasswordField();
@@ -56,11 +56,11 @@ public class Interface extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("SYSTEM ACCES");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("LOGGIN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLoggin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLoggin.setText("LOGGIN");
+        btnLoggin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLogginActionPerformed(evt);
             }
         });
 
@@ -121,7 +121,7 @@ public class Interface extends javax.swing.JFrame {
                                     .addComponent(btnCreateUser)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
-                                        .addComponent(jButton1)))
+                                        .addComponent(btnLoggin)))
                                 .addGap(43, 43, 43)))
                         .addGap(0, 101, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -145,7 +145,7 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(ScrPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnLoggin)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -157,7 +157,7 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogginActionPerformed
 // TODO add your handling code here:
         List<Password> pass = new ArrayList<>();
         Password desencrypt = null;
@@ -190,7 +190,7 @@ public class Interface extends javax.swing.JFrame {
         
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLogginActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -261,7 +261,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JPasswordField ScrPass;
     private javax.swing.JTextField ScrUser;
     private javax.swing.JButton btnCreateUser;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnLoggin;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

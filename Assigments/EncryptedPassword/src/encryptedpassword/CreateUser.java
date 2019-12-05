@@ -5,6 +5,7 @@
  */
 package encryptedpassword;
 
+import com.google.gson.Gson;
 import static encryptedpassword.Encryption.encriptar;
 import static encryptedpassword.FileCsv.exportCsv;
 import java.io.UnsupportedEncodingException;
@@ -123,6 +124,8 @@ public class CreateUser extends javax.swing.JFrame {
             Logger.getLogger(CreateUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         pass.add(new Password(scrUser,encrypt));
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(pass);
         exportCsv(pass);
         
         
@@ -175,4 +178,6 @@ public class CreateUser extends javax.swing.JFrame {
     private javax.swing.JPasswordField scrCreatePassword;
     private javax.swing.JTextField scrCreateUser;
     // End of variables declaration//GEN-END:variables
+
+    
 }
