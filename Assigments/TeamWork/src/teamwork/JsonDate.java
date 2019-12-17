@@ -101,7 +101,7 @@ public class JsonDate extends javax.swing.JFrame {
         Gson gson = new Gson();
         String pers = gson.toJson(persons);
         try {
-            file.write(pers);
+            file.write(pers,true);
         } catch (IOException ex) {
             Logger.getLogger(JsonDate.class.getName()).log(Level.SEVERE, null, ex);
         }
