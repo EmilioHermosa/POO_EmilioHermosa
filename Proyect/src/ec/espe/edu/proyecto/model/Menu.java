@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ec.espe.edu.proyecto.model;
 
 import com.csvreader.CsvWriter;
@@ -10,10 +6,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author Invitado
- */
 public class Menu {
      public void showMenuAdm() {
         int opc=0;
@@ -28,8 +20,8 @@ public class Menu {
         
             switch(opc){
                 case 1:
-                    IPersonal proyecto = new IPersonal();
-                    proyecto.create();
+//                    IPersonal proyecto = new IPersonal();
+//                    proyecto.create();
                 break;
                 case 11:
                     

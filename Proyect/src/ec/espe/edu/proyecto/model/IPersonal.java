@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ec.espe.edu.proyecto.model;
 import com.csvreader.CsvWriter;
 import java.io.File;
@@ -12,36 +8,28 @@ import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-/**
- *
- * @author Pablo Cadena
- */
+
 public class IPersonal {
 
     /**
      * @param args the command line arguments
      */
-    public  void create() {
+    public  void create(String username, String password) {
         String studentFile = "Personal.csv";
         Scanner scan = new Scanner(System. in);
         File file = new File(studentFile);
         if (file.exists()) {
             file.delete();
         }
-
+        
         try {
             CsvWriter writer = new CsvWriter(new FileWriter(studentFile, true), ';');
-
-            System.out.println("Ingrese el nombre del usuario para generarlo:");
-            writer.write(scan.nextLine());
-            System.out.println("Ingrese su contraseña:");
-            writer.write(scan.nextLine());
-
+            writer.write(username);
+            writer.write(password);
             writer.endRecord();
             writer.close();
-        } catch (IOException e) {
+        } catch (Exception e) {}
 
-        }
     }
 
     public boolean existPersonal(String userName, String userContra ){

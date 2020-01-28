@@ -26,8 +26,8 @@ public class userMain {
     public static void main(String[] args) throws IOException  {
 
         Scanner scan = new Scanner(System. in);
-        String admName = "pepito";
-        String admContraseña = "pepito123";
+        String admName = "Emilio";
+        String admContraseña = "Poo2963";
         String userName, userContra; 
         System.out.println("INGRESE USUARIO:");
         userName = scan.nextLine();

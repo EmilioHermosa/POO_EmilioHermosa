@@ -57,26 +57,31 @@ public class JfrmMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Almacen VideoGames ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 136, 40));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 210, 40));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Usuario:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 60, 23));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Contraseña:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, 23));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, 23));
 
+        jbutLogIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jbutLogIn.setText("Log In");
+        jbutLogIn.setToolTipText("Presione para ingresar al sistema");
+        jbutLogIn.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbutLogIn.setContentAreaFilled(false);
         jbutLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbutLogInActionPerformed(evt);
             }
         });
-        getContentPane().add(jbutLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        getContentPane().add(jbutLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 70, 30));
 
+        jfrmGetPassword.setToolTipText("Ingrese su contraseña");
         jfrmGetPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jfrmGetPasswordActionPerformed(evt);
@@ -87,9 +92,9 @@ public class JfrmMain extends javax.swing.JFrame {
                 jfrmGetPasswordKeyPressed(evt);
             }
         });
-        getContentPane().add(jfrmGetPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 104, -1));
+        getContentPane().add(jfrmGetPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 130, 30));
 
-        jfrmGetUserName.setToolTipText("Tu usuario");
+        jfrmGetUserName.setToolTipText("Ingrese su nombre de ususario");
         jfrmGetUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jfrmGetUserNameActionPerformed(evt);
@@ -100,18 +105,22 @@ public class JfrmMain extends javax.swing.JFrame {
                 jfrmGetUserNameKeyPressed(evt);
             }
         });
-        getContentPane().add(jfrmGetUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 104, -1));
+        getContentPane().add(jfrmGetUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 130, 30));
 
+        JbutExit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         JbutExit.setText("Salir");
+        JbutExit.setToolTipText("Presione para salir del sistema");
+        JbutExit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JbutExit.setContentAreaFilled(false);
         JbutExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JbutExitActionPerformed(evt);
             }
         });
-        getContentPane().add(JbutExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 65, -1));
+        getContentPane().add(JbutExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 80, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/espe/edu/imagenes/fondo verde.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 290, 260));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 330, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,22 +129,27 @@ public class JfrmMain extends javax.swing.JFrame {
         String userName, userContra;
         userName = jfrmGetUserName.getText();
         userContra = jfrmGetPassword.getText();
-        String admName = "pepito";
-        String admContraseña = "pepito123";
+        String admName = "Emilio";
+        String admContraseña = "Poo2963";
         Menu menu = new Menu();
         IPersonal archivoPersonal = new IPersonal();
         if (userName.equals(admName) && userContra.equals(admContraseña)){
 
-            menu.showMenuAdm();
+            //menu.showMenuAdm();
+        JfrmMenuAdmin jfrmMenuAdmin = new JfrmMenuAdmin();
+        jfrmMenuAdmin.setVisible(true);
+        this.dispose();
         }
         else if (archivoPersonal.existPersonal(userName, userContra))try {
             menu.showMenuUser();
         } catch (IOException ex) {
             Logger.getLogger(JfrmMain.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (!userName.equals(admName) && userContra.equals(admContraseña)||userName.equals(admName) && !userContra.equals(admContraseña)||!userName.equals(admName) && !userContra.equals(admContraseña)){
         JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos","Mesage error" , 0);
         jfrmGetUserName.setText("");
         jfrmGetPassword.setText("");
+        }
     }//GEN-LAST:event_jbutLogInActionPerformed
 
     private void jfrmGetUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jfrmGetUserNameActionPerformed

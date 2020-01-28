@@ -7,10 +7,7 @@ package ec.espe.edu.proyecto.model;
 
 import java.util.Scanner;
 
-/**
- *
- * @author Invitado
- */
+
 public class Console {
 
     private int id;

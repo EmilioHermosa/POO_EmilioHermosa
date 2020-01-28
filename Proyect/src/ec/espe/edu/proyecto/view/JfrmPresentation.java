@@ -18,9 +18,10 @@ public class JfrmPresentation extends javax.swing.JFrame {
      */
     public JfrmPresentation() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Video games");
         this.setIconImage(new ImageIcon(getClass().getResource("/ec/espe/edu/imagenes/iconSystem.png")).getImage());
-        this.setTitle("Game On System - Welcome");
-        this.setLocationRelativeTo(JfrmPresentation.this);
+
     }
 
     /**
@@ -45,7 +46,12 @@ public class JfrmPresentation extends javax.swing.JFrame {
         jLabel2.setText("GAME ON");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 180, 40));
 
+        BtnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        BtnExit.setForeground(new java.awt.Color(153, 0, 0));
         BtnExit.setText("Salir");
+        BtnExit.setToolTipText("Presione para cerrar el sistema");
+        BtnExit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnExit.setContentAreaFilled(false);
         BtnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnExitActionPerformed(evt);
@@ -53,13 +59,18 @@ public class JfrmPresentation extends javax.swing.JFrame {
         });
         getContentPane().add(BtnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 70, -1));
 
+        BtnAcces.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        BtnAcces.setForeground(new java.awt.Color(153, 0, 0));
         BtnAcces.setText("Acceder");
+        BtnAcces.setToolTipText("Presione para acceder al sistema");
+        BtnAcces.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        BtnAcces.setContentAreaFilled(false);
         BtnAcces.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAccesActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnAcces, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, -1, -1));
+        getContentPane().add(BtnAcces, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 90, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/espe/edu/imagenes/ec.espe.edu.imagenes.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 310));

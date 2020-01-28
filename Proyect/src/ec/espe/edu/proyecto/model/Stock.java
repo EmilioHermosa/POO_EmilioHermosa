@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ec.espe.edu.proyecto.model;
 
 import com.csvreader.CsvWriter;
@@ -11,10 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- *
- * @author Pablo
- */
+
 public class Stock {
     private ArrayList<Console> listaConsole;
     
